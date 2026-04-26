@@ -11,7 +11,7 @@ const app = express();
 // ── Security Middleware ──
 app.use(helmet());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
+  origin: [process.env.FRONTEND_URL, 'https://inquisitive-rolypoly-ec9a90.netlify.app', 'http://localhost:3000'].filter(Boolean),
   credentials: true
 }));
 
